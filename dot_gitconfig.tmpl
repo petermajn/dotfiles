@@ -1,0 +1,37 @@
+[alias]
+	dotfiles = !git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+	dot = !git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+[user]
+	name = {{ .name | quote }}
+	email = {{ .email | quote }}
+[core]
+	excludesFile = ~/.gitignore_global
+[pull]
+	rebase = true
+[alias]
+	a = add
+	co = checkout
+	st = status
+	sts = status -s
+	c = commit
+	cm = commit -m
+	ca = commit -a
+	cam = commit -am 
+	unstage = reset HEAD --
+	df = diff
+	dfc = diff --cached
+	ls = log --all --oneline --graph
+	lg = log --all --graph
+	la = log --all --graph --pretty=format:\"%C(auto)%h %an: %s %d\" 
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short	
+	cr = !git --git-dir=$HOME/.config_repo/ --work-tree=$HOME
+	dotfiles = !git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+	dot = !git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+	# https://docs.gitignore.io/use/command-line
+	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
