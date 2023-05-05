@@ -18,5 +18,10 @@ abbr -a -- cme chezmoi edit
 abbr -a -- cma chezmoi apply
 abbr -a -- cmd chezmoi diff
 
+abbr -a -- k kubectl
+abbr -a -- kd kubectl delete
+abbr -a -- kaf kubectl apply -f
+abbr -a -- kg kubectl get
+abbr -a -- kga kubectl get all
 
 starship init fish | source

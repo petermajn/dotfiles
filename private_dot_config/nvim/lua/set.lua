@@ -35,6 +35,7 @@ opt.colorcolumn = "65,80"
 
 
 g.mapleader = " " 
+g.maplocalleader = " " 
 
 
 
