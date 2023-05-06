@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
             require('neorg').setup {
                 load = {
                     ["core.defaults"] = {}, -- Loads default behaviour
+                    ["core.export"] = {}, 
+                    ["core.summary"] = {}, 
                     ["core.concealer"] = {}, -- Adds pretty icons to your documents
                     ["core.dirman"] = { -- Manages Neorg workspaces
                     config = {
