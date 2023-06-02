@@ -1,5 +1,5 @@
 return {
-      lazy = true,
+      lazy = false,
         "nvim-neorg/neorg",
         -- keys = {
         --     local journal = require("neorg.modules.core.journal.module")
