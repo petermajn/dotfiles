@@ -1,14 +1,15 @@
 local opt = vim.opt
 local g = vim.g
+local indent = 4
 
 opt.guicursor = ""
 
 opt.nu = true
 opt.relativenumber = true
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = indent
+opt.softtabstop = indent
+opt.shiftwidth = indent
 opt.expandtab = true
 
 opt.autoindent = true
@@ -36,6 +37,7 @@ opt.colorcolumn = "65,80"
 
 g.mapleader = " " 
 g.maplocalleader = " " 
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 
 
