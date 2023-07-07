@@ -1,14 +1,11 @@
 return {
-      lazy = false,
+      lazy = true,
         "nvim-neorg/neorg",
-        -- keys = {
-        --     local journal = require("neorg.modules.core.journal.module")
-        --     return {
-        --         {"<leader>jj", journal.private.diary_today,desc="Journal Today"},
-        --         {"<leader>jt", journal.private.diary_tomorrow,desc="Journal Tomorrow"},
-        --         {"<leader>jy", journal.private.diary_yesterday,desc="Journal Yesterday"},
-        --     }
-        -- },
+        keys = {
+            {"<leader>jj", "<cmd>Neorg journal today<cr>", desc="Journal Today"},
+            {"<leader>jt", "<cmd>Neorg journal tomorrow<cr>", desc="Journal Tomorrow"},
+            {"<leader>jy", "<cmd>Neorg journal yesterday<cr>", desc="Journal Yesterday"},
+        },
         config = function()
             require('neorg').setup {
                 load = {
