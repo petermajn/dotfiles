@@ -1,6 +1,15 @@
 return {
     "kshenoy/vim-signature",
     {
+        "ThePrimeagen/refactoring.nvim",
+        lazy = false,
+        dependencies = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        },
+        config = true,
+    },
+    {
         "mbbill/undotree",
         keys = {
             { "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle Undotree" },

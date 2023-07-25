@@ -1,0 +1,10 @@
+[data]
+name = "Dr. Jan Petermann (TNG)"
+email = "jan.petermann@tngtech.com"
+
+[edit]
+command = "nvim"
+
+[merge]
+command = "nvim"
+args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
