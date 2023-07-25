@@ -7,6 +7,7 @@ end
 
 fish_add_path /opt/homebrew/bin
 fish_add_path /usr/local/share/dotnet/
+fish_add_path ~/.cargo/bin
 ######################
 #Environment Variables
 ######################
