@@ -1,10 +1,14 @@
 [data]
-name = "Dr. Jan Petermann (TNG)"
-email = "jan.petermann@tngtech.com"
+    name = "Dr. Jan Petermann (TNG)"
+    email = "jan.petermann@tngtech.com"
 
 [edit]
-command = "nvim"
+    command = "nvim"
+
+[diff]
+    command = "nvim"
+    args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Target }}`}}"]
 
 [merge]
-command = "nvim"
-args = ["-d", "{{"{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"}}"]
+    command = "nvim"
+    args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Source }}", "{{ .Target }}`}}"]
