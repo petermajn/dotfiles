@@ -5,13 +5,19 @@ if status is-interactive
 end
 
 
-fish_add_path /opt/homebrew/bin
-fish_add_path /usr/local/share/dotnet/
-fish_add_path ~/.cargo/bin
 ######################
 #Environment Variables
 ######################
 set -x ARM_USE_AZUREAD true
+set -x PYENV_ROOT $HOME/.pyenv
+
+######################
+#Path
+######################
+fish_add_path /opt/homebrew/bin
+fish_add_path /usr/local/share/dotnet/
+fish_add_path ~/.cargo/bin
+fish_add_path $PYENV_ROOT/bin
 
 ##############
 #Abbreviations
