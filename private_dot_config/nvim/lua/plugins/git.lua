@@ -10,9 +10,9 @@ return {
         opts = {
             integrations = { diffview = true },
         },
-        keys = {
-            { "<leader>gs", "<cmd>Neogit kind=tab<cr>", desc = "Status" },
-        },
+        --        keys = {
+        --            { "<leader>gs", "<cmd>Neogit kind=tab<cr>", desc = "Status" },
+        --        },
     },
 
 }

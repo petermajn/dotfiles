@@ -1,5 +1,23 @@
 return {
-    "kshenoy/vim-signature",
+    {
+        "ThePrimeagen/git-worktree.nvim",
+        lazy = false,
+        config = function()
+            require("git-worktree").setup()
+            require("telescope").load_extension("git_worktree")
+        end
+    },
+    {
+        'numToStr/Comment.nvim',
+        lazy = false,
+        config = function()
+            require('Comment').setup()
+        end
+    },
+    -- {
+    --     "petermajn/taskwarrior.nvim",
+    --     config = true,
+    -- },
     {
         "ThePrimeagen/refactoring.nvim",
         lazy = false,
@@ -19,14 +37,16 @@ return {
         "tpope/vim-fugitive",
         keys = { { "<leader>gs", vim.cmd.Git, desc = "Git" } },
     },
+    "kshenoy/vim-signature",
     "sotte/presenting.vim",
     {
         "iamcco/markdown-preview.nvim",
+        lazy = false,
         build = function() vim.fn["mkdp#util#install"]() end,
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufReadPre",
+        lazy = false,
         config = true,
     },
     {
