@@ -2,28 +2,29 @@ local keymap = vim.keymap.set
 
 keymap("n", "<leader>pv", vim.cmd.Ex)
 
-keymap("v", "J", ":m '>+1<CR>gv=gv") 
-keymap("v", "K", ":m '<-2<CR>gv=gv")
+keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Visual: Move Line Down" })
+keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Visual: Move Line Up" })
 
-keymap("n", "J", "mzJ`z")
-keymap("n", "<C-d>", "<C-d>zz")
-keymap("n", "<C-u>", "<C-u>zz")
-keymap("n", "n", "nzzzv")
-keymap("n", "N", "nzzzv")
+keymap("n", "J", "mzJ`z", { desc = "Concat Line from below" })
+keymap("n", "<C-d>", "<C-d>zz", { desc = "Move Page [D]own" })
+keymap("n", "<C-u>", "<C-u>zz", { desc = "Move Page [U]p" })
+keymap("n", "n", "nzzzv", { desc = "Search: Next Result" })
+keymap("n", "N", "Nzzzv", { desc = "Search: Previous Result" })
 
-keymap("x", "<leader>p", "\"_dP")
+keymap("x", "<leader>p", "\"_dP", { desc = "Visual: Replace with Yanked" })
 
 keymap("n", "<leader>y", "\"+y")
 keymap("v", "<leader>y", "\"+y")
 keymap("n", "<leader>Y", "\"+Y")
 
-keymap("n", "<leader>d", "\"_d")
-keymap("v", "<leader>d", "\"_d")
+keymap("n", "<leader>d", "\"_d", { desc = "[D]elete to Void" })
+keymap("v", "<leader>d", "\"_d", { desc = "[D]elete to Void" })
 
 keymap("n", "Q", "<noop>")
 
-keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true})
+keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "[S]ubsitite Word on Cursor" })
+keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Current File: chmod +x" })
+keymap("n", "<leader>-x", "<cmd>!chmod -x %<CR>", { silent = true, desc = "Current File: chmod -x" })
 
 -- Move Lines
 keymap("n", "<A-j>", ":m .+1<CR>==")

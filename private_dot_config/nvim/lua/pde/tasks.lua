@@ -16,7 +16,7 @@ M.task_obsolete = function()
 end
 
 
-vim.keymap.set("n", "<leader>tn", M.task_new)
+vim.keymap.set("n", "<leader>tn", M.task_new, { desc = "[T]ask [N]ew" })
 
 
 return M
