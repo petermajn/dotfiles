@@ -135,6 +135,24 @@ local M = {
             for k, _ in pairs(opts.setup) do
                 opts.setup[k](plugin, opts)
             end
+            dap.configurations.python = {
+                {
+                    name = "Python: Launch file",
+                    program = "${file}",
+                    pythonPath = "/Users/jan/.pyenv/versions/3.10.9/envs/admin_atlassian/bin/python",
+                    request = "launch",
+                    type = "python",
+                    justMyCode = false,
+                },
+                {
+                    type = 'python',
+                    request = 'launch',
+                    name = 'My custom launch configuration',
+                    program = '${file}',
+                    justMyCode = false,
+                }
+                -- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
+            }
         end,
     },
     {

@@ -3,5 +3,6 @@
 .python-version
 .ipynb_checkpoints/
 .worktrees
+pyrightconfig.json
 
 

@@ -29,6 +29,10 @@ return {
             { 'rafamadriz/friendly-snippets' },
         },
         config = function()
+            -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+            require("neodev").setup({
+                -- add any options here, or leave empty to use the default settings
+            })
             require("plugins.lsp.servers").setup()
             local lsp = require('lsp-zero').preset(
                 {
