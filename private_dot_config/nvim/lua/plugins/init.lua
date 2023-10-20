@@ -33,10 +33,6 @@ return {
             { "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle Undotree" },
         },
     },
-    {
-        "tpope/vim-fugitive",
-        keys = { { "<leader>gs", vim.cmd.Git, desc = "Git" } },
-    },
     "kshenoy/vim-signature",
     "sotte/presenting.vim",
     {

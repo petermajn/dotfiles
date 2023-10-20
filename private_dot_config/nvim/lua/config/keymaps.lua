@@ -1,6 +1,6 @@
 local keymap = vim.keymap.set
 
-keymap("n", "<leader>pv", vim.cmd.Ex)
+-- keymap("n", "<leader>pv", vim.cmd.Ex)
 
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Visual: Move Line Down" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Visual: Move Line Up" })

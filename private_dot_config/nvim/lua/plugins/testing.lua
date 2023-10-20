@@ -1,7 +1,14 @@
 return {
     {
         "nvim-neotest/neotest",
-        lazy = false,
+        cmd = {
+            "Neotest",
+        },
+        keys = {
+            { "<leader>tr",  "<cmd>Neotest run<cr>",      desc = "[T]est [R]un" },
+            { "<leader>trf", "<cmd>Neotest run file<cr>", desc = "[T]est [R]un [F]ile" },
+            { "<leader>ts",  "<cmd>Neotest stop<cr>",     desc = "[T]est [S]top" },
+        },
         dependencies = {
             "vim-test/vim-test",
             "nvim-neotest/neotest-vim-test",

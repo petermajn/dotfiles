@@ -3,12 +3,12 @@ return {
     lazy = false,
     cmd = "Telescope",
     keys = {
-        { "<leader><space>", "<cmd>Telescope find_files<cr>",             desc = "Find Files" },
-        { "<leader>ff",      "<cmd>Telescope find_files<cr>",             desc = "Find Files" },
-        { "<leader>ffh",     "<cmd>Telescope find_files hidden=true<cr>", desc = "Find Hidden Files" },
-        { "<leader>fr",      "<cmd>Telescope oldfiles<cr>",               desc = "Recent" },
-        { "<leader>fb",      "<cmd>Telescope buffers<cr>",                desc = "Buffers" },
-        { "<leader>fg",      "<cmd>Telescope git_files<cr>",              desc = "Git Files" },
+        { "<leader><space>", "<cmd>Telescope find_files<cr>",             desc = "[F]ind [F]iles" },
+        { "<leader>ff",      "<cmd>Telescope find_files<cr>",             desc = "[F]ind [F]iles" },
+        { "<leader>ffh",     "<cmd>Telescope find_files hidden=true<cr>", desc = "[F]ind [F]iles [H]idden" },
+        { "<leader>fr",      "<cmd>Telescope oldfiles<cr>",               desc = "[F]ind [R]ecent" },
+        { "<leader>fb",      "<cmd>Telescope buffers<cr>",                desc = "[F]ind [B]uffers" },
+        { "<leader>fg",      "<cmd>Telescope git_files<cr>",              desc = "[F]ind [G]it Files" },
         { "<leader>f/",      "<cmd>Telescope live_grep<cr>",              desc = "Grep" },
         {
             "<leader>ft",

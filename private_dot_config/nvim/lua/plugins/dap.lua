@@ -8,7 +8,6 @@ local M = {
             { "jay-babu/mason-nvim-dap.nvim" },
             { "LiadOz/nvim-dap-repl-highlights",  opts = {} },
         },
-        -- stylua: ignore
         keys = {
             {
                 "<leader>dR",
@@ -78,7 +77,7 @@ local M = {
                 desc = "Run Last"
             },
             { "<leader>dp", function() require("dap").pause.toggle() end,      desc = "Pause", },
-            { "<leader>dq", function() require("dap").close() end,             desc = "Quit", },
+            { "<leader>dq", function() require("dap").close() end,             desc = "[Q]uit", },
             {
                 "<leader>dr",
                 function() require("dap").repl.toggle() end,
@@ -135,22 +134,38 @@ local M = {
             for k, _ in pairs(opts.setup) do
                 opts.setup[k](plugin, opts)
             end
+
+            local get_python_version = function()
+                local python = vim.api.nvim_exec("!pyenv which python", true)
+                print(vim.inspect(python))
+                local lines = vim.split(python, '\n')
+                return lines[3]
+            end
             dap.configurations.python = {
                 {
-                    name = "Python: Launch file",
+                    name = "pyenv-version",
                     program = "${file}",
-                    pythonPath = "/Users/jan/.pyenv/versions/3.10.9/envs/admin_atlassian/bin/python",
+                    pythonPath = get_python_version,
                     request = "launch",
                     type = "python",
                     justMyCode = false,
                 },
-                {
-                    type = 'python',
-                    request = 'launch',
-                    name = 'My custom launch configuration',
-                    program = '${file}',
-                    justMyCode = false,
-                }
+                -- {
+                --     name = "atlassian",
+                --     program = "${file}",
+                --     pythonPath = "/Users/jan/.pyenv/versions/3.10.9/envs/admin_atlassian/bin/python",
+                --     request = "launch",
+                --     type = "python",
+                --     justMyCode = false,
+                -- },
+                -- {
+                --     name = "confluence_backup",
+                --     program = "${file}",
+                --     pythonPath = "/Users/jan/.pyenv/versions/3.10.9/envs/confluence_backup/bin/python",
+                --     request = "launch",
+                --     type = "python",
+                --     justMyCode = false,
+                -- }
                 -- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
             }
         end,
