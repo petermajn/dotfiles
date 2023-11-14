@@ -1,4 +1,5 @@
 return {
+    { import = "plugins.lsp.yamlls" },
     {
         lazy = false,
         --event = "BufReadPre",
@@ -60,7 +61,7 @@ return {
                 'pylsp',
                 'ruff_lsp',
                 'bashls',
-                'azure_pipelines_ls',
+                --'azure_pipelines_ls',
                 'rust_analyzer',
                 'yamlls',
                 'helm_ls',
