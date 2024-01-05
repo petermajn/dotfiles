@@ -4,7 +4,7 @@ return {
     cmd = "Telescope",
     keys = {
         { "<leader><space>", "<cmd>Telescope find_files<cr>",             desc = "[F]ind [F]iles" },
-        { "<leader>ff",      "<cmd>Telescope find_files<cr>",             desc = "[F]ind [F]iles" },
+        { "<leader>ff",      "<cmd>Telescope find_files no_ignore=true<cr>",             desc = "[F]ind [F]iles" },
         { "<leader>ffh",     "<cmd>Telescope find_files hidden=true<cr>", desc = "[F]ind [F]iles [H]idden" },
         { "<leader>fr",      "<cmd>Telescope oldfiles<cr>",               desc = "[F]ind [R]ecent" },
         { "<leader>fb",      "<cmd>Telescope buffers<cr>",                desc = "[F]ind [B]uffers" },
