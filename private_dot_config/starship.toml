@@ -1,0 +1,9 @@
+[kubernetes]
+disabled = false
+format = 'on [⛵ ($cluster in )\($namespace\)]($style) '
+style = 'dimmed green'
+detect_extensions = ['yaml']
+contexts = [
+    { context_pattern = ".*-(prd|devops)", style = "bold red" },
+    { context_pattern = ".*-stg", style = "yellow" },
+]

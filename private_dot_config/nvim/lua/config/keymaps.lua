@@ -33,3 +33,8 @@ keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
 keymap("n", "<A-k>", ":m .-2<CR>==")
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv")
 keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
+
+keymap("n", "]q", ":cn<CR>")
+keymap("n", "[q", ":cp<CR>")
+keymap("n", "]Q", ":clast<CR>")
+keymap("n", "[Q", ":cfirst<CR>")

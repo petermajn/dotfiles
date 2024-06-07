@@ -6,6 +6,7 @@ opt.guicursor = ""
 
 opt.nu = true
 opt.relativenumber = true
+opt.cursorline = true
 
 opt.tabstop = indent
 opt.softtabstop = indent
@@ -35,9 +36,6 @@ opt.updatetime = 50
 opt.colorcolumn = "65,80"
 
 
-g.mapleader = " " 
-g.maplocalleader = " " 
+g.mapleader = " "
+g.maplocalleader = " "
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
-
-

@@ -1,5 +1,9 @@
 return {
     {
+        "tpope/vim-characterize",
+        lazy = false,
+    },
+    {
         "ThePrimeagen/git-worktree.nvim",
         lazy = false,
         config = function()
@@ -51,15 +55,6 @@ return {
         event = "VeryLazy",
         enabled = true,
         config = true, -- same as config = true
-    },
-    {
-        'folke/zen-mode.nvim',
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
-
     },
     {
         "aserowy/tmux.nvim",

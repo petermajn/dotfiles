@@ -1,5 +1,7 @@
 return {
     { import = "plugins.lsp.yamlls" },
+    { import = "plugins.lsp.sonarlint" },
+    { import = "plugins.lsp.none-ls" },
     {
         lazy = false,
         --event = "BufReadPre",
@@ -23,6 +25,13 @@ return {
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
             { 'hrsh7th/cmp-nvim-lua' },
+            {
+                'windwp/nvim-autopairs',
+                event = "InsertEnter",
+                config = true
+                -- use opts = {} for passing setup options
+                -- this is equalent to setup({}) function
+            },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' }, -- Required
@@ -53,6 +62,7 @@ return {
                 vim.keymap.set({ 'n', 'x' }, 'gq', function()
                     vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
                 end, opts)
+                vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
             end)
 
             lsp.ensure_installed({
@@ -66,6 +76,7 @@ return {
                 'yamlls',
                 'helm_ls',
                 'terraformls',
+                'tflint',
                 'jsonnet_ls',
                 'sqlls',
                 'texlab',
@@ -92,6 +103,26 @@ return {
                     --['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
                     ['<Tab>'] = cmp_action.tab_complete(),
                     ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+                },
+            })
+            -- If you want insert `(` after select function or method item
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            cmp.event:on(
+                'confirm_done',
+                cmp_autopairs.on_confirm_done()
+            )
+            local lspconfig = require("lspconfig")
+            lspconfig.jsonnet_ls.setup({})
+            lspconfig.pylsp.setup({
+                settings = {
+                    pylsp = {
+                        configurationSources = { "flake8" },
+                        plugins = {
+                            jedi_completion = {
+                                include_params = true -- this line enables snippets
+                            },
+                        },
+                    },
                 },
             })
         end,

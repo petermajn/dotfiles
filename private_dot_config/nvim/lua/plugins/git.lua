@@ -1,5 +1,15 @@
 return {
     {
+        "FabijanZulj/blame.nvim",
+        opts = {
+            virtual_style = "float",
+            merge_consecutive = false,
+        },
+        keys = {
+            { "<leader>gb", "<cmd>ToggleBlame virtual<cr>", desc = "[G]it [B]lame" },
+        }
+    },
+    {
         "sindrets/diffview.nvim",
         cmd = {
             "DiffviewOpen",
