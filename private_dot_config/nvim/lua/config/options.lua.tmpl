@@ -2,6 +2,10 @@ local opt = vim.opt
 local g = vim.g
 local indent = 4
 
+{{ if .mouse_mode }}
+opt.mouse = ""
+{{ end }}
+
 opt.guicursor = ""
 
 opt.nu = true
