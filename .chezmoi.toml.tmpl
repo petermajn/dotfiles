@@ -1,14 +1,17 @@
 [data]
+    mouse_mode = false
+    use_nerdfonts = false
+
     name = "Dr. Jan Petermann (TNG)"
     email = "jan.petermann@tngtech.com"
 
 [edit]
     command = "nvim"
 
-[diff]
-    command = "nvim"
-    args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Target }}`}}"]
-
-[merge]
-    command = "nvim"
-    args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Source }}", "{{ .Target }}`}}"]
+## [diff]
+##     command = "nvim"
+##     args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Target }}`}}"]
+##
+## [merge]
+##     command = "nvim"
+##     args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Source }}", "{{ .Target }}`}}"]
