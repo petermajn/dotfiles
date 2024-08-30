@@ -11,6 +11,7 @@ end
 ######################
 set -x ARM_USE_AZUREAD true
 set -x PYENV_ROOT $HOME/.pyenv
+set -x EDITOR nvim
 
 ######################
 #Path
